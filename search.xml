@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>通过hexo+Github搭建个人博客（一）准备工作</title>
+      <link href="/2022/11/24/2-ru-he-ji-yu-hexo-github-da-jian-bo-ke-1-zhun-bei-gong-zuo/"/>
+      <url>/2022/11/24/2-ru-he-ji-yu-hexo-github-da-jian-bo-ke-1-zhun-bei-gong-zuo/</url>
+      
+        <content type="html"><![CDATA[<p>这是一个关于个人博客搭建的经验教程。此教程基于mac系统配置写成，部分环节在系统上存在一定差异，但总体与win相差不大。</p><p>我的个人博客搭建主要依赖于hexo 与 GitHub 两部分，操作不算困难，但建议一步一步来。</p><p>let’s begin！（正在写，不要急，慢慢来）</p><h1 id="1、GitHub账号的创建"><a href="#1、GitHub账号的创建" class="headerlink" title="1、GitHub账号的创建"></a>1、GitHub账号的创建</h1><h2 id="1-1注册一个GitHub账号"><a href="#1-1注册一个GitHub账号" class="headerlink" title="1.1注册一个GitHub账号"></a>1.1注册一个GitHub账号</h2><p>随着你写的代码越来越多，就需要去管理这些代码，可能要在不同的电脑上编写同一份代码，可能要和别人合作开发，也可能想把项目分享给别人。更进一步地，你可能还会需要管理代码的不同历史版本。于是你就得和代码管理工具以及代码托管平台打交道。</p><p>Github 是现在广泛流行的代码托管平台，很多开源项目都把代码放在这里。</p><p>1、首先进入：<a href="github.com">GitHub官网</a></p><p>2、点击绿色框Sign up for GitHub进行注册</p><p>3、注册页面第一栏email（邮箱），第二栏password（密码），第三栏username（用户名）进行验证后即可完成注册。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>My first post</title>
       <link href="/2022/11/24/1-my-first-blog-fu-ben-3/"/>
       <url>/2022/11/24/1-my-first-blog-fu-ben-3/</url>
