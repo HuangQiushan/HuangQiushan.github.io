@@ -402,21 +402,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-25
+                    2022-11-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -493,8 +493,26 @@
 <li>将文件添加并 commit 到本地仓库；</li>
 <li>将本地仓库的内容push到远程仓库。</li>
 </ol>
-<h2 id="4-1-详细步骤"><a href="#4-1-详细步骤" class="headerlink" title="4.1 详细步骤"></a>4.1 详细步骤</h2><p>首先新建一个仓库。创建完成后点击 <strong>Clone or download</strong>，复制地址，然后进入我们准备存储 Git 仓库的目录</p>
+<h2 id="4-1-详细步骤"><a href="#4-1-详细步骤" class="headerlink" title="4.1 详细步骤"></a>4.1 详细步骤</h2><p>首先新建一个仓库。</p>
+<p>创建完成后点击 <strong>Clone or download</strong>，复制地址，然后通过git bash 或 terminal 进入我们准备存储 Git 仓库的本地目录。</p>
 <p><img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221125220013289.png" alt="image-20221125220013289" style="zoom:50%;"><img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221125220100444.png" alt="image-20221125220100444" style="zoom:25%;"><img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221125220019808.png" alt="image-20221125220019808" style="zoom:25%;"></p>
+<p>接下来，输入 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone https://github.com/Qiushan-Joshua/test-.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>将远程仓库 clone 到本地，如下图：<img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221126203929245.png" alt="image-20221126203929245"></p>
+<p>找到本地文件夹，查看仓库是否与GitHub上的远程仓库项目一致：<img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221126204123276.png" alt="image-20221126204123276"></p>
+<p>接下来我们创建一个 试试你.txt 文件进行测试：</p>
+<p><img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221126204606828.png" alt="image-20221126204606828"></p>
+<p>由此本地目录进入Git bash 或 Terminal 中，输入 git status 命令进行仓库状态的查询，会发现报出提示 untracked files，也就是说在 test- 这个git仓库中，所创建的 试试你.txt 未被追踪，也就是未被真正提交到本地的git仓库中。</p>
+<p>现在我们使用 git add 命令将文件添加到了「临时缓冲区」，再用 git commit -m “提交信息” 将其提交到本地仓库，如下图：<img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221126205129923.png" alt="image-20221126205129923"></p>
+<p>在第一次提交中，会出现要求提交用户名和邮箱的情况，此时只需要在命令框输入以下代码以及你的github即可：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email<span class="token string">"github 邮箱"</span>
+$ <span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name<span class="token string">"# github 用户名"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>完成后输入 git log 命令查看仓库提交日志，再输入 git status 查看一下仓库状态，得到如下反馈：<img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221126211323858.png" alt="image-20221126211323858"></p>
+<p>现在输入 git push origin main 命令，将本地仓库提交到远程仓库，origin是远程主机的名字，第一次上传需要输入密码，验证成功后，如下图：<img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221126211604014.png" alt="image-20221126211604014"></p>
+<p>此时刷新GitHub中的 test- 仓库，便可看见 试试你.txt 已上传至远程仓库中。</p>
+<p><img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/image-20221126211643708.png" alt="image-20221126211643708"></p>
 
                 
             </div>
@@ -1088,7 +1106,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.3k</span>&nbsp;字
+                class="white-color">2.7k</span>&nbsp;字
             
             
             
