@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>python学习：数据可视化</title>
+      <link href="/2022/12/01/8-python-xue-xi-ke-shi-hua/"/>
+      <url>/2022/12/01/8-python-xue-xi-ke-shi-hua/</url>
+      
+        <content type="html"><![CDATA[<h1 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h1><h2 id="绘制简单的折线图"><a href="#绘制简单的折线图" class="headerlink" title="绘制简单的折线图"></a>绘制简单的折线图</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''#!/usr/bin/env python3'''</span><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt <span class="token comment">#导入pyplot模块</span><span class="token keyword">import</span> matplotlibplt<span class="token punctuation">.</span>style<span class="token punctuation">.</span>use<span class="token punctuation">(</span><span class="token string">'seaborn'</span><span class="token punctuation">)</span> <span class="token comment">#可视化样式设置于字体前</span><span class="token triple-quoted-string string">'''terminal 查询可视化样式风格：https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html'''</span>matplotlib<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">"font"</span><span class="token punctuation">,</span> family<span class="token operator">=</span><span class="token string">'Li Xuke Comic Font'</span><span class="token punctuation">)</span> <span class="token comment">#字体优先设置，在生成图表前的代码添加</span><span class="token comment">#terminal import matplotib.pyplot as plt ;  plt.stytle.available</span>input_value <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token comment">#更改第一个点的对应关系</span>squares <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">]</span> <span class="token comment">#取名一个叫squares的列表存储数据</span>fig<span class="token punctuation">,</span> fuck <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#变量fig表示整张图片，ax表示图片中的各个图表</span><span class="token comment">#定义fuck 为plt.subplots</span>fuck<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>input_value<span class="token punctuation">,</span>squares<span class="token punctuation">,</span>linewidth<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">#引用fuck中绘制图表的方法 plot</span><span class="token comment">#设置图表标题并在坐标轴加上标签</span>fuck<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"平方数"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">24</span><span class="token punctuation">)</span>fuck<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">"我他妈是横坐标"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">14</span><span class="token punctuation">)</span>fuck<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">"I'm fucking y label"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span> <span class="token number">14</span><span class="token punctuation">)</span><span class="token comment">#设置刻度线标记的大小</span>fuck<span class="token punctuation">.</span>tick_params<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token string">'both'</span><span class="token punctuation">,</span>labelsize<span class="token operator">=</span> <span class="token number">14</span><span class="token punctuation">)</span>plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+            <tag> 可视化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>7、转载：深度解读什么是历史虚无主义</title>
       <link href="/2022/11/27/7-zhuan-zai-shen-du-jie-du-shi-me-shi-li-shi-xu-wu-zhu-yi/"/>
       <url>/2022/11/27/7-zhuan-zai-shen-du-jie-du-shi-me-shi-li-shi-xu-wu-zhu-yi/</url>
