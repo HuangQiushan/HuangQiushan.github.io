@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python学习：数据可视化, Qiushan2001">
+    <meta name="keywords" content="python学习:实例：求概预算解关键线路, Qiushan2001">
     <meta name="description" content="Student，Artist &amp; civil engineering">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python学习：数据可视化 | Qiushan2001</title>
+    <title>python学习:实例：求概预算解关键线路 | Qiushan2001</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -259,12 +259,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/8%E3%80%81%E5%B0%81%E9%9D%A2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/%E5%8D%9A%E5%AE%A2/10%E3%80%81%E5%85%B3%E9%94%AE%E7%BA%BF%E8%B7%AF%E5%B0%81%E9%9D%A2.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python学习：数据可视化</h1>
+                    <h1 class="description center-align post-title">python学习:实例：求概预算解关键线路</h1>
                 </div>
             </div>
         </div>
@@ -384,10 +384,6 @@
                                 <span class="chip bg-color">python</span>
                             </a>
                         
-                            <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">
-                                <span class="chip bg-color">可视化</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -409,28 +405,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-12-01
+                    2022-12-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-01
+                    2022-12-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    239
+                    952
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -453,35 +449,87 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h1><h2 id="绘制简单的折线图"><a href="#绘制简单的折线图" class="headerlink" title="绘制简单的折线图"></a>绘制简单的折线图</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''
-#!/usr/bin/env python3
-'''</span>
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt <span class="token comment">#导入pyplot模块</span>
-<span class="token keyword">import</span> matplotlib
-plt<span class="token punctuation">.</span>style<span class="token punctuation">.</span>use<span class="token punctuation">(</span><span class="token string">'seaborn'</span><span class="token punctuation">)</span> <span class="token comment">#可视化样式设置于字体前</span>
-<span class="token triple-quoted-string string">'''
-terminal 查询可视化样式风格：
-https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html
-'''</span>
-matplotlib<span class="token punctuation">.</span>rc<span class="token punctuation">(</span><span class="token string">"font"</span><span class="token punctuation">,</span> family<span class="token operator">=</span><span class="token string">'Li Xuke Comic Font'</span><span class="token punctuation">)</span> <span class="token comment">#字体优先设置，在生成图表前的代码添加</span>
+                <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/%E5%8D%9A%E5%AE%A2/10%E3%80%81%E9%A2%98%E7%9B%AE.png"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># import numpy as np</span>
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt  <span class="token comment"># 导入 Matplotlib 工具包</span>
+<span class="token keyword">import</span> networkx <span class="token keyword">as</span> nx  <span class="token comment"># 导入 NetworkX 工具包</span>
 
-<span class="token comment">#terminal import matplotib.pyplot as plt ;  plt.stytle.available</span>
-input_value <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token comment">#更改第一个点的对应关系</span>
-squares <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">]</span> <span class="token comment">#取名一个叫squares的列表存储数据</span>
-fig<span class="token punctuation">,</span> fuck <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#变量fig表示整张图片，ax表示图片中的各个图表</span>
-<span class="token comment">#定义fuck 为plt.subplots</span>
-fuck<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>input_value<span class="token punctuation">,</span>squares<span class="token punctuation">,</span>linewidth<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">#引用fuck中绘制图表的方法 plot</span>
-<span class="token comment">#设置图表标题并在坐标轴加上标签</span>
+<span class="token comment"># 2. 关键路径的时间参数(critical path method)</span>
+DG <span class="token operator">=</span> nx<span class="token punctuation">.</span>DiGraph<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 创建：空的 有向图</span>
+<span class="token comment"># Activity on edge network(AOE), 顶点表示状态，有向边表示工序</span>
+DG<span class="token punctuation">.</span>add_nodes_from<span class="token punctuation">(</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ET<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> LT<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+DG<span class="token punctuation">.</span>add_weighted_edges_from<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token punctuation">,</span><span class="token number">3</span> <span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            <span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                            <span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 向图中添加多条赋权边: (node1,node2,weight)</span>
+lenNodes <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>DG<span class="token punctuation">.</span>nodes<span class="token punctuation">)</span>  <span class="token comment"># 顶点数量 YouCans</span>
+topoSeq <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>nx<span class="token punctuation">.</span>topological_sort<span class="token punctuation">(</span>DG<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 拓扑序列: [1, 3, 4, 2, 5, 7, 6]</span>
+<span class="token comment"># --- 计算各顶点的 ET：事件最早时间 ---</span>
+ET <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>lenNodes<span class="token punctuation">)</span><span class="token punctuation">]</span>  <span class="token comment"># 初始化 事件最早时间 （ET）</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>lenNodes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> e <span class="token keyword">in</span> DG<span class="token punctuation">.</span>in_edges<span class="token punctuation">(</span>topoSeq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 遍历顶点 topoSeq[i] 的 入边</span>
+        ETij <span class="token operator">=</span> DG<span class="token punctuation">.</span>nodes<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"ET"</span><span class="token punctuation">]</span> <span class="token operator">+</span> DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"weight"</span><span class="token punctuation">]</span>  <span class="token comment"># 该路线的最早时间</span>
+    <span class="token comment">#[e[0]] [e[0]][e[1]]  [e[1]] 排列</span>
+        <span class="token keyword">if</span> ETij <span class="token operator">&gt;</span> ET<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span> ET<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> ETij  <span class="token comment"># 该路线所需时间更长</span>
+    DG<span class="token punctuation">.</span>add_node<span class="token punctuation">(</span>topoSeq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> ET<span class="token operator">=</span>ET<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 顶点（事件）的最早时间</span>
 
-fuck<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"平方数"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">24</span><span class="token punctuation">)</span>
-fuck<span class="token punctuation">.</span>set_xlabel<span class="token punctuation">(</span><span class="token string">"我他妈是横坐标"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">14</span><span class="token punctuation">)</span>
-fuck<span class="token punctuation">.</span>set_ylabel<span class="token punctuation">(</span><span class="token string">"I'm fucking y label"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span> <span class="token number">14</span><span class="token punctuation">)</span>
+<span class="token comment"># --- 计算各顶点的 LT：事件最晚时间 ---</span>
+revSeq <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">reversed</span><span class="token punctuation">(</span>topoSeq<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 翻转拓扑序列，以便从终点倒推计算 LT</span>
+LT <span class="token operator">=</span> <span class="token punctuation">[</span>DG<span class="token punctuation">.</span>nodes<span class="token punctuation">[</span>revSeq<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"ET"</span><span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>lenNodes<span class="token punctuation">)</span><span class="token punctuation">]</span>  <span class="token comment"># 初始化 事件最晚时间为 ET 最大值</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>lenNodes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> e <span class="token keyword">in</span> DG<span class="token punctuation">.</span>out_edges<span class="token punctuation">(</span>revSeq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment"># 遍历顶点 revSeq[i] 的 出边</span>
+        LTij <span class="token operator">=</span> DG<span class="token punctuation">.</span>nodes<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"LT"</span><span class="token punctuation">]</span> <span class="token operator">-</span> DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"weight"</span><span class="token punctuation">]</span>  <span class="token comment"># 该路线的最晚时间</span>
+        <span class="token keyword">if</span> LTij <span class="token operator">&lt;</span> LT<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">:</span> LT<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> LTij  <span class="token comment"># 该路线所需时间更长</span>
+    DG<span class="token punctuation">.</span>add_node<span class="token punctuation">(</span>revSeq<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> LT<span class="token operator">=</span>LT<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 顶点（事件）的最晚时间</span>
 
-<span class="token comment">#设置刻度线标记的大小</span>
-fuck<span class="token punctuation">.</span>tick_params<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token string">'both'</span><span class="token punctuation">,</span>labelsize<span class="token operator">=</span> <span class="token number">14</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n节点(顶点)的最早时间 ET, 最晚时间 LT:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> n <span class="token keyword">in</span> DG<span class="token punctuation">.</span>nodes<span class="token punctuation">:</span>  <span class="token comment"># 遍历有向图的顶点</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\t节点 {}:\tET= {}\tLT= {}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> DG<span class="token punctuation">.</span>nodes<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"ET"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> DG<span class="token punctuation">.</span>nodes<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"LT"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># --- 计算各条边的 ES, LS：各项活动的最早开始时间、最晚开始时间 ---</span>
+cpDG <span class="token operator">=</span> nx<span class="token punctuation">.</span>DiGraph<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 创建空的有向图, 保存关键路径</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n工序(边)的最早开始时间 ES, 最晚开始时间 LS:"</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> e <span class="token keyword">in</span> DG<span class="token punctuation">.</span>edges<span class="token punctuation">:</span>  <span class="token comment"># 遍历有向图的边</span>
+    DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"ES"</span><span class="token punctuation">]</span> <span class="token operator">=</span> DG<span class="token punctuation">.</span>nodes<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"ET"</span><span class="token punctuation">]</span>  <span class="token comment"># i点 ET</span>
+    DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"LS"</span><span class="token punctuation">]</span> <span class="token operator">=</span> DG<span class="token punctuation">.</span>nodes<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"LT"</span><span class="token punctuation">]</span> <span class="token operator">-</span> DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"weight"</span><span class="token punctuation">]</span>  <span class="token comment"># j点lt值减去（i，j）t值</span>
+    <span class="token keyword">if</span> DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"ES"</span><span class="token punctuation">]</span> <span class="token operator">==</span> DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"LS"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>  <span class="token comment"># 如果最早、最晚开工时间相同，则为关键路径上的边</span>
+        cpDG<span class="token punctuation">.</span>add_edge<span class="token punctuation">(</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> weight<span class="token operator">=</span>DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"weight"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 加入 关键路径</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\t工序 {}:\tES= {}\tLS= {}\tt= {}\tEF= {}\tLF={}"</span><span class="token punctuation">.</span>\
+    <span class="token builtin">format</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"ES"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> \
+    DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"LS"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"weight"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> \
+    DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"ES"</span><span class="token punctuation">]</span><span class="token operator">+</span>DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"weight"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>\
+    DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"LS"</span><span class="token punctuation">]</span><span class="token operator">+</span>DG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"weight"</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#反斜杠 \ 分割长代码</span>
+<span class="token comment">#format语句字符串点值直接相加</span>
+lenCP <span class="token operator">=</span> <span class="token builtin">sum</span><span class="token punctuation">(</span>cpDG<span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"weight"</span><span class="token punctuation">]</span> <span class="token keyword">for</span> e <span class="token keyword">in</span> cpDG<span class="token punctuation">.</span>edges<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n关键路线:{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>cpDG<span class="token punctuation">.</span>edges<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"项目最短工期:{}"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>lenCP<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
+<span class="token comment"># 绘制有向网络图</span>
+fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+pos <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">:</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token comment">#指定顶点坐标位置</span>
+edgesDG <span class="token operator">=</span> DG<span class="token punctuation">.</span>edges
+edgesDashed <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token comment">#表示虚作业，完成该作业所需时间为0，只是表示工序的前后关系。</span>
+edgesSolid <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">set</span><span class="token punctuation">(</span>edgesDG<span class="token punctuation">)</span><span class="token operator">-</span><span class="token builtin">set</span><span class="token punctuation">(</span>edgesDashed<span class="token punctuation">)</span><span class="token punctuation">)</span>
+labels <span class="token operator">=</span> nx<span class="token punctuation">.</span>get_edge_attributes<span class="token punctuation">(</span>DG<span class="token punctuation">,</span> <span class="token string">"weight"</span><span class="token punctuation">)</span>
+nx<span class="token punctuation">.</span>draw_networkx_nodes<span class="token punctuation">(</span>DG<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> node_color<span class="token operator">=</span><span class="token string">'orange'</span><span class="token punctuation">,</span>node_size<span class="token operator">=</span><span class="token number">400</span><span class="token punctuation">)</span>  <span class="token comment"># 工作节点的颜色、宽度</span>
+nx<span class="token punctuation">.</span>draw_networkx_labels<span class="token punctuation">(</span>DG<span class="token punctuation">,</span> pos<span class="token punctuation">)</span>  <span class="token comment"># 设置指定顶点的标签</span>
+nx<span class="token punctuation">.</span>draw_networkx_edges<span class="token punctuation">(</span>DG<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> edgelist<span class="token operator">=</span>edgesSolid<span class="token punctuation">,</span> edge_color<span class="token operator">=</span><span class="token string">'dimgrey'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'solid'</span><span class="token punctuation">,</span>width<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># 设置指定边的颜色、线型</span>
+nx<span class="token punctuation">.</span>draw_networkx_edges<span class="token punctuation">(</span>DG<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> edgelist<span class="token operator">=</span>edgesDashed<span class="token punctuation">,</span> edge_color<span class="token operator">=</span><span class="token string">'grey'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'dashed'</span><span class="token punctuation">,</span>width<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment"># 设置指定边，虚线</span>
+nx<span class="token punctuation">.</span>draw_networkx_edge_labels<span class="token punctuation">(</span>DG<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> edge_labels<span class="token operator">=</span>labels<span class="token punctuation">,</span> font_color<span class="token operator">=</span><span class="token string">'dimgrey'</span><span class="token punctuation">)</span>  <span class="token comment"># 显示边的权值</span>
+nx<span class="token punctuation">.</span>draw_networkx_edges<span class="token punctuation">(</span>DG<span class="token punctuation">,</span> pos<span class="token punctuation">,</span> edgelist<span class="token operator">=</span>cpDG<span class="token punctuation">.</span>edges<span class="token punctuation">,</span> edge_color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> width<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 设置指定边的颜: 显示关键路径</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Project network graph by Qiushan"</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>text<span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"Qiushan Joshua"</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'gainsboro'</span><span class="token punctuation">)</span> <span class="token comment"># gainsboro 亮灰色 水印色</span>
+plt<span class="token punctuation">.</span>xlim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>axis<span class="token punctuation">(</span><span class="token string">'on'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="计算结果"><a href="#计算结果" class="headerlink" title="计算结果"></a>计算结果</h1><p><img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/%E5%8D%9A%E5%AE%A2/10%E3%80%81%E5%85%B3%E9%94%AE%E7%BA%BF%E8%B7%AF%E5%9B%BE.png"></p>
+<p><img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/%E5%8D%9A%E5%AE%A2/10%E3%80%81%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.png"></p>
 
                 
             </div>
@@ -508,7 +556,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Qiushan-Joshua.github.io/2022/12/01/8-python-xue-xi-ke-shi-hua/">http://Qiushan-Joshua.github.io/2022/12/01/8-python-xue-xi-ke-shi-hua/</a>
+                    <a href="http://Qiushan-Joshua.github.io/2022/12/03/9-python-xue-xi-gai-yu-suan-zhi-guan-jian-xian-lu-fa-qiu-jie/">http://Qiushan-Joshua.github.io/2022/12/03/9-python-xue-xi-gai-yu-suan-zhi-guan-jian-xian-lu-fa-qiu-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,10 +596,6 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                             
                                 <a href="/tags/python/">
                                     <span class="chip bg-color">python</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">
-                                    <span class="chip bg-color">可视化</span>
                                 </a>
                             
                         </div>
@@ -743,9 +787,10 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/12/03/9-python-xue-xi-gai-yu-suan-zhi-guan-jian-xian-lu-fa-qiu-jie/">
                     <div class="card-image">
@@ -762,9 +807,58 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
+                                    计算机
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/12/01/8-python-xue-xi-ke-shi-hua/">
+                    <div class="card-image">
+                        
+                        <img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/8%E3%80%81%E5%B0%81%E9%9D%A2.jpg" class="responsive-img" alt="python学习：数据可视化">
+                        
+                        <span class="card-title">python学习：数据可视化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            生出数据、下载数据
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -784,56 +878,8 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
                         <span class="chip bg-color">python</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/11/27/7-zhuan-zai-shen-du-jie-du-shi-me-shi-li-shi-xu-wu-zhu-yi/">
-                    <div class="card-image">
-                        
-                        <img src="https://qiushan2001.oss-cn-hangzhou.aliyuncs.com/blog%20text/8.jpg" class="responsive-img" alt="7、转载：深度解读什么是历史虚无主义">
-                        
-                        <span class="card-title">7、转载：深度解读什么是历史虚无主义</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            马克思主义仍然是指引当代人类胜利前进的旗帜，不管你承认与否，你要往前走，就必须在这面旗帜下行走。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-27
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%BD%AC%E8%BD%BD/" class="post-category">
-                                    转载
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%99%9A%E6%97%A0%E4%B8%BB%E4%B9%89/">
-                        <span class="chip bg-color">虚无主义</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%80%9D%E6%83%B3/">
-                        <span class="chip bg-color">思想</span>
+                    <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/">
+                        <span class="chip bg-color">可视化</span>
                     </a>
                     
                 </div>
